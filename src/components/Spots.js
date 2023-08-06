@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+// Spots.js
+import React, { useEffect, useState } from 'react';
 import { Auth } from 'aws-amplify';
 import { config as appConfig } from '../services/config';
+import './Spots.css'; // Import CSS file for styling
 
 const Spots = () => {
   const [spotsData, setSpotsData] = useState([]);
@@ -44,28 +46,28 @@ const Spots = () => {
   }
 
   return (
-    
-    <div>
-      <h1>Welcome to the Spot Page</h1>
+    <div className="spots-grid">
       {spotsData.map((spot) => (
-        <div key={spot.spotId.S}>
+        <div key={spot.spotId.S} className="spot-card">
           <img
             src={spot.photoUrl.S}
             alt="Spot"
-            style={{ maxWidth: '100%', height: 'auto' }}
+            className="spot-image"
           />
-          <p>
-            <strong>Author:</strong> {spot.introducedBy.S}
-          </p>
-          <p>
-            <strong>Address:</strong> {spot.address.S}
-          </p>
-          <p>
-            <strong>Description:</strong> {spot.description.S}
-          </p>
-          <p>
-            <strong>Name:</strong> {spot.name.S}
-          </p>
+          <div className="spot-details">
+            <p>
+              <strong>Author:</strong> {spot.introducedBy.S}
+            </p>
+            <p>
+              <strong>Address:</strong> {spot.address.S}
+            </p>
+            <p>
+              <strong>Description:</strong> {spot.description.S}
+            </p>
+            <p>
+              <strong>Name:</strong> {spot.name.S}
+            </p>
+          </div>
         </div>
       ))}
     </div>

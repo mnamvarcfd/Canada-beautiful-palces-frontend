@@ -4,13 +4,14 @@ import Navbar from './components/NavBar';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import Spots from './components/Spots';
+import Home from './components/Home';
 import IntroduceSpot from './components/IntroduceSpot';
 import { getAWSTempCred } from './components/AuthenticatingUser';
 
 
 
 
-const Home = () => <h1>Welcome to Home Page</h1>;
+// const Home = () => <h1>Welcome to Home Page</h1>;
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
